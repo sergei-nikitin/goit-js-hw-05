@@ -9,6 +9,25 @@
 // Метод prepend(str) - получает парметр str(строку) и добавляет ее в начало value
 // Метод pad(str) - получает парметр str(строку) и добавляет ее в начало и в конец _value
 
+class StringBuilder {
+  constructor(_value) {
+    this._value = _value;
+  }
+  get value() {
+    return this._value;
+  }
+  append(str) {
+    return (this._value += str);
+  }
+  prepend(str) {
+    this._value = str += this.value;
+  }
+  pad(str) {
+    this.append(str);
+    this.prepend(str);
+  }
+}
+
 const builder = new StringBuilder(".");
 
 builder.append("^");
